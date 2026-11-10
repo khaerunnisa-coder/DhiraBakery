@@ -1,3 +1,383 @@
-.home {
-    background-color: white;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Space+Mono:wght@400;500;600;700&display=swap');
+:root {
+    --bg-main: #f5efe6;
+    --bg-dark: #2e1c14;
+    --bg-card: #ffffff;
+    --card-hover: #f5efe6;
+    --text-light: #f5efe6;
+    --text-dark: #2e1c14;
+    --text-muted: #7c3626;
+    --accent-brown: #7c3626;
+    --accent-hover: #a14d36;
+    --border-color: rgba(46, 28, 20, 0.15);
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, .brand-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.hero-subtitle-italic {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.tech-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navbar-tech {
+    background: var(--bg-dark);
+    padding: 16px 28px;
+    border-radius: 20px;
+    margin-top: 15px;
+    box-shadow: 0 10px 25px rgba(46, 28, 20, 0.15);
+}
+
+.navbar-tech .brand-title {
+    color: var(--text-light) !important;
+}
+
+.navbar-tech .nav-link {
+    color: var(--text-light);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    margin: 0 12px;
+    opacity: 0.85;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.navbar-tech .nav-link:hover, .navbar-tech .nav-link.active {
+    opacity: 1;
+    color: #ffffff;
+    border-bottom: 2px solid var(--accent-brown);
+}
+
+.hero-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Membuat box setinggi kolom teks di kirinya */
+    padding: 10px 0;
+}
+
+.hero-logo-badge {
+    width: 100%;
+    min-height: 340px;         /* Mengatur tinggi minimal agar proporsional */
+    border-radius: 24px;       /* Sudut tumpul yang halus */
+    background-color: #f5efe6; /* Warna krem natural sesuai halaman */
+    border: none !important;   /* Menghilangkan bingkai kaku */
+    box-shadow: none !important; /* Menghilangkan bayangan berat agar flat dan minimalis */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;             /* Memberikan ruang lega di sekitar logo */
+    transition: transform 0.3s ease;
+}
+
+.hero-logo-badge:hover {
+    transform: scale(1.02);    /* Sedikit interaksi saat di-hover */
+}
+
+.hero-logo-badge img {
+    width: 100%;
+    max-width: 330px;          /* Memastikan logo besar tapi tidak pecah */
+    height: auto;
+    max-height: 270px;
+    object-fit: contain;
+}
+
+/* Responsif untuk Layar Handphone */
+@media (max-width: 991.98px) {
+    .hero-logo-badge {
+        min-height: 250px;
+        padding: 30px;
+        margin-top: 20px;
+    }
+}
+.hero-container {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    border-radius: 28px;
+    padding: 48px 42px;
+}
+
+/* Judul Utama (Sans-Serif Bold & Tegas seperti Referensi) */
+.hero-title {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 3.2rem !important;
+    font-weight: 800 !important;
+    line-height: 0.95 !important;
+    letter-spacing: -1px !important;
+    color: #f5efe6 !important;
+    text-transform: uppercase !important;
+    margin: 0 !important;
+}
+
+
+.hero-subtitle-italic {
+    font-family: 'Playfair Display', serif !important;
+    font-style: italic !important;
+    font-size: 2.2rem !important;
+    font-weight: 400 !important;
+    color: #e5a93c !important; /* Warna Emas/Kuning Referensi */
+    margin: 6px 0 !important;
+    line-height: 1 !important;
+}
+
+
+.hero-container .tech-tag {
+    color: rgba(245, 239, 230, 0.55) !important;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+
+.hero-desc {
+    color: rgba(245, 239, 230, 0.75) !important;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 28px;
+    max-width: 460px;
+}
+
+.btn-cream {
+    background-color: #f5efe6 !important; /* Krem Terang Tema */
+    color: #23120b !important;            /* Cokelat Tua */
+    border-radius: 50px !important;
+    padding: 12px 30px !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    border: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-decoration: none !important;     /* Menghapus garis bawah */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-cream:hover, 
+.btn-cream:focus {
+    background-color: #eae0d3 !important; /* Krem sedikit lebih gelap saat di-hover */
+    color: #23120b !important;
+    transform: translateY(-2px);
+    text-decoration: none !important;
+}
+
+
+.btn-terracotta {
+    background-color: var(--accent-brown) !important;
+    color: #ffffff !important;
+    border-radius: 50px !important;
+    padding: 12px 30px !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    border: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-terracotta:hover {
+    background-color: var(--accent-hover) !important;
+    transform: translateY(-2px);
+}
+
+.filter-pill {
+    background-color: #eae0d3 !important;   /* Krem Lembut */
+    border: 1px solid #d9cebf !important;  /* Garis Pinggir Halus */
+    color: #23120b !important;            /* Teks Cokelat Tua */
+    padding: 8px 22px !important;
+    border-radius: 30px !important;
+    font-size: 0.8rem !important;
+    font-family: 'Space Mono', monospace !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;     /* Hapus Garis Bawah Biru */
+    display: inline-block !important;
+    transition: all 0.2s ease-in-out !important;
+    box-shadow: 0 2px 6px rgba(35, 18, 11, 0.05) !important;
+}
+
+.filter-pill:hover {
+    background-color: #7c3626 !important;   /* Cokelat Terracotta saat Hover */
+    color: #ffffff !important;
+    border-color: #7c3626 !important;
+    text-decoration: none !important;
+    transform: translateY(-2px);
+}
+
+/* Status Kategori Aktif / Terpilih */
+.filter-pill.active {
+    background-color: #23120b !important;   /* Cokelat Pekat Gelap */
+    color: #f5efe6 !important;            /* Teks Krem Terang */
+    border-color: #23120b !important;
+    box-shadow: 0 4px 10px rgba(35, 18, 11, 0.2) !important;
+}
+.card-ice-product img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.card-ice-title {
+    color: var(--text-dark);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.card-ice-desc {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.card-ice-price {
+    color: var(--accent-brown);
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+.futuristic-card {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 32px;
+    box-shadow: 0 12px 30px rgba(46, 28, 20, 0.15);
+}
+
+.form-control-tech, .form-select-tech {
+    background: rgba(245, 239, 230, 0.1) !important;
+    border: 1px solid rgba(245, 239, 230, 0.25) !important;
+    color: var(--text-light) !important;
+    border-radius: 12px !important;
+    padding: 12px 16px !important;
+}
+
+.form-control-tech:focus, .form-select-tech:focus {
+    background: rgba(245, 239, 230, 0.18) !important;
+    border-color: var(--accent-brown) !important;
+    box-shadow: 0 0 0 0.25rem rgba(124, 54, 38, 0.3) !important;
+}
+
+.form-control-tech::placeholder {
+    color: var(--text-muted) !important;
+}
+
+.btn-accent {
+    background-color: var(--accent-brown);
+    color: var(--text-light);
+    border-radius: 30px;
+    font-weight: 600;
+    padding: 10px 24px;
+    border: none;
+    transition: all 0.2s;
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-hover);
+    color: var(--text-light);
+}
+
+.table-dark {
+    --bs-table-bg: var(--bg-dark);
+    --bs-table-color: var(--text-light);
+}
+
+.admin-navbar {
+    background-color: var(--bg-dark, #23120b);
+    border-radius: 20px;
+    padding: 14px 28px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(35, 18, 11, 0.15);
+}
+
+.admin-nav-btn {
+    background: rgba(245, 239, 230, 0.1);
+    color: #f5efe6 !important;
+    border: 1px solid rgba(245, 239, 230, 0.2);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.82rem;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.admin-nav-btn:hover {
+    background: var(--accent-brown, #7c3626) !important;
+    color: #ffffff !important;
+    border-color: var(--accent-brown, #7c3626) !important;
+    transform: translateY(-2px);
+}
+
+/* Status Tombol Navigasi Aktif */
+.admin-nav-btn.active {
+    background: #f5efe6 !important;
+    color: #23120b !important;
+    border-color: #f5efe6 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Tombol Logout & Lihat Toko */
+.admin-btn-logout {
+    background-color: var(--accent-brown, #7c3626) !important;
+    color: #ffffff !important;
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-size: 0.82rem;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+.admin-btn-logout:hover {
+    background-color: var(--accent-hover, #5c2719) !important;
+    color: #ffffff !important;
+}
+
+a.brand-title,
+.brand-title {
+    color: var(--text-dark, #23120b) !important;
+    text-decoration: none !important;
+}
+
+a.brand-title:hover {
+    color: var(--accent-brown, #7c3626) !important;
+    text-decoration: none !important;
 }
