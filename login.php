@@ -7,6 +7,7 @@ if (isset($_SESSION['admin_id']) && $_SESSION['admin_role'] === 'admin') {
     exit();
 }
 
+
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email    = trim($_POST['email']);
