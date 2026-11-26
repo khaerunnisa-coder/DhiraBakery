@@ -1,7 +1,7 @@
 <?php
 // config/koneksi.php
-$host     = 'localhost';
-$db       = 'db_dhira_bakery';
+$host     = '127.0.0.1';
+$db       = 'db_dhirabakery';
 $user     = 'root';
 $pass     = '';
 $charset  = 'utf8mb4';
